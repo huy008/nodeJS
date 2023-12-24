@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+     <title>Sửa thông tin công việc</title>
+</head>
+
+<body>
+     <%- include('menu.ejs') %>
+     
+    <% function convert(str) {
+  var date = new Date(str),
+    mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+    day = ("0" + date.getDate()).slice(-2);
+  return [date.getFullYear(), mnth, day].join("-");
+}%>
+ <% var date1 =convert(job.ngayBatDauCongViec ); %>
+   <% var date2 =convert(job.ngayKetThucCongViec ); %>
+     <!-- Dự án -->
+     <div class="container mt-5">
+          <h2>Sửa thông tin công việc</h2>
+          <form form action="/editp-CongViec" method="post">
+        <div class="form-group">
+          <label for="TCV_input">Tên công việc:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="TCV_input"
+            value="<%= job.tenCongViec %>""
+          />
+        </div>
+        <div class="form-group">
+          <label for="NBDCV_input">Ngày bắt đầu công việc:</label>
+          <input
+            type="date"
+            class="form-control"
+            name="NBDCV_input"
+           value="<%= date1 %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="NKTCV_input">Ngày kết thúc công việc:</label>
+          <input
+            type="date"
+            class="form-control"
+            name="NKTCV_input"
+            value="<%=date2 %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="TNV_input">Tên nhân viên:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="TNV_input"
+            value="<%= job.tenNhanVien %>""
+          />
+        </div>
+        <div class="form-group">
+          <label for="TTCV_input">Trạng thái công việc:</label>
+         <input
+            type="text"
+            class="form-control"
+            name="TTCV_input"
+            value="<%= job.trangThaiCongViec %>""
+          />
+        </div>
+        <div class="form-group">
+          <label for="MTCV_input">Mô tả công việc:</label>
+          <input
+          type="text"
+            class="form-control"
+            name="MTCV_input"
+            value="<%= job.moTaCongViec %>""
+          ></input>
+        </div>
+        <input name="id"  value="<%= job.id %> " type="text" hidden>
+         <button type="submit" class="btn btn-primary">
+          Sửa
+        </button>
+      </form>
+     </div>
+
+     </form>
+     </div>
+     <script
+          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+     <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+     <script
+          src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

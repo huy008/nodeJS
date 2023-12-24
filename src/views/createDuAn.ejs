@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+     <title>Nhập thông tin dự án</title>
+</head>
+<body>
+       <%- include('menu.ejs') %>
+     <!-- Dự án -->
+     <div class="container mt-5">
+          <h2>Thiết lập thông tin dự án</h2>
+          <form action="/createp-DuAn" method="post">
+               <div class="form-group">
+                    <label for="TDA_input">Tên dự
+                         án:</label>
+                    <input type="text"
+                         class="form-control"
+                         name="TDA_input"
+                         placeholder="Nhập tên dự án" />
+               </div>
+               <div class="form-group">
+                    <label for="NBD_input">Ngày
+                         bắt đầu dự án:</label>
+                    <input type="date"
+                         class="form-control"
+                         name="NBD_input"
+                         value="2024-01-01" />
+               </div>
+               <div class="form-group">
+                    <label for="NKT_input">Ngày
+                         kết thúc dự án:</label>
+                    <input type="date"
+                         class="form-control"
+                         name="NKT_input"
+                         value="2024-01-01" />
+               </div>
+               <div class="form-group">
+                    <label for="NQL_input">Người
+                         quản lý:</label>
+                    <input type="text"
+                         class="form-control"
+                         name="NQL_input"
+                         placeholder="Nhập tên người quản lý" />
+               </div>
+               <div class="form-group">
+                    <label for="MTDA_input">Mô tả
+                         dự án:</label>
+                    <textarea class="form-control"
+                         name="MTDA_input" rows="4"
+                         placeholder="Nhập mô tả dự án"></textarea>
+               </div>
+               <button type="submit"
+                    class="btn btn-primary"
+                    >Thêm dự án</button>
+          </form>
+     </div>
+  
+          </form>
+     </div>
+     <script
+          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+     <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+     <script
+          src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

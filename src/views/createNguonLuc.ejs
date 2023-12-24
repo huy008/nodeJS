@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <title>Nhập thông tin nguồn lực</title>
+  </head>
+  <body>
+    <%- include('menu.ejs') %>
+    <!-- Nguồn lực -->
+    <div class="container mt-5">
+      <h2>Tạo nguồn lực</h2>
+      <form action="/createp-NguonLuc" method="post">
+        <div class="form-group">
+          <label for="TNL_input">Tên nguồn lực:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="TNL_input"
+            placeholder="Nhập tên nguồn lực" />
+        </div>
+       
+        <div class="form-group">
+          <label for="LNL_input">Loại nguồn lực:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="LNL_input"
+            placeholder="Nhập loại nguồn lực" />
+        </div>
+        <div class="form-group">
+          <label for="MTNL_input">Mô tả nguồn lực:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="MTNL_input"
+            placeholder="Nhập tên mô tả nguồn lực" />
+        </div>
+        <div class="form-group">
+          <label for="KNNL_input">Khả năng nguồn lực:</label>
+          <input
+          type="text"
+            class="form-control"
+            name="KNNL_input"
+            placeholder="Nhập khả năng nguồn lực"></input>
+        </div>
+        <div class="form-group">
+          <label for="CP_input">Chi phí:</label>
+          <input
+          type="number"
+            class="form-control"
+            name="CP_input"
+            placeholder="Nhập chi phí"></input>
+        </div>
+        <div class="form-group">
+          <label for="TGSD_input">Thời gian sử dung:</label>
+          <input
+          type="text"
+            class="form-control"
+            name="TGSD_input"
+            placeholder="Nhập thời gian sử dung"></input>
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm nguồn lực</button>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

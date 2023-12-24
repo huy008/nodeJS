@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <title>Nhập thông tin công việc</title>
+  </head>
+  <body>
+    <%- include('menu.ejs') %>
+    <!-- Công việc -->
+    <div class="container mt-5">
+      <h2>Tạo công việc</h2>
+      <form action="/createp-CongViec" method="post">
+        <div class="form-group">
+          <label for="TCV_input">Tên công việc:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="TCV_input"
+            placeholder="Nhập tên công việc" />
+        </div>
+        <div class="form-group">
+          <label for="NBDCV_input">Ngày bắt đầu công việc:</label>
+          <input
+            type="date"
+            class="form-control"
+            name="NBDCV_input"
+            value="2024-01-01" />
+        </div>
+        <div class="form-group">
+          <label for="NKTCV_input">Ngày kết thúc công việc:</label>
+          <input
+            type="date"
+            class="form-control"
+            name="NKTCV_input"
+            value="2024-01-01" />
+        </div>
+        <div class="form-group">
+          <label for="TNV_input">Tên nhân viên:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="TNV_input"
+            placeholder="Nhập tên nhân viên" />
+        </div>
+        <div class="form-group">
+          <label for="TTCV_input">Trạng thái công việc:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="TTCV_input"
+            placeholder="Nhập tên trạng thái công việc" />
+        </div>
+        <div class="form-group">
+          <label for="MTCV_input">Mô tả công việc:</label>
+          <textarea
+            class="form-control"
+            name="MTCV_input"
+            rows="4"
+            placeholder="Nhập mô tả công việc"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm công việc</button>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

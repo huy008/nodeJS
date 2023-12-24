@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <title>Danh sách các dự án</title>
+  </head>
+  <body>
+    <%- include('menu.ejs') %>
+     <% function convert(str) {
+  var date = new Date(str),
+    mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+    day = ("0" + date.getDate()).slice(-2);
+  return [day,mnth,date.getFullYear()].join("-");
+}%>
+ <% var date1 ;%>
+ <% var date2 ;%>
+   <div class="m-4">
+     <h1 class="m-3">Danh sách các dự án</h1>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Tên dự án</th>
+          <th scope="col">Người quản lý</th>
+          <th scope="col">Mô tả dự án</th>
+          <th scope="col">Ngày bắt đầu dự án</th>
+          <th scope="col">Ngày kết thúc dự án</th>
+          <th scope="col">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% posts.forEach((post)=> { %>
+         <%  date1 =convert( post.ngayBatDauDuAn ); %>
+           <%  date2 =convert( post.ngayKetThucDuAn  ); %>
+        <tr>
+          <td><%= post.tenDuAn %></td>
+          <td><%= post.nguoiQuanLy %></td>
+          <td><%= post.moTaDuAn %></td>
+           <td><%= date1 %></td>
+          <td><%= date2 %></td>
+          <td>
+             <div class="btn-group">
+            <a
+              href="/editg-DuAn?id=<%= post.id %>"
+              type="button"
+              class="btn btn-warning mr-2"
+              >Sửa</a
+            >
+            <a
+              href="/delete-DuAn?id=<%= post.id %>"
+              type="button"
+              class="btn btn-danger"
+              >Xóa</a
+            >
+          </td>
+          </div>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+   </div>
+
+    <div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<%- include('pagination.ejs',{title : title,soTrang:soTrang,page:page}) %>
+</div>
+</div>
+</div>
+
+  </body>
+</html>

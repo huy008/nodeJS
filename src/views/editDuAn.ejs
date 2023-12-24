@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+     <title>Sửa thông tin dự án</title>
+</head>
+
+<body>
+     <%- include('menu.ejs') %>
+
+        <% function convert(str) {
+  var date = new Date(str),
+    mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+    day = ("0" + date.getDate()).slice(-2);
+  return [date.getFullYear(),mnth,day].join("-");
+}%>
+<% var date3 =convert(post.ngayBatDauDuAn); %>
+ <% var date4 =convert(post.ngayKetThucDuAn); %>
+     <!-- Dự án -->
+     <div class="container mt-5">
+          <h2>Sửa thông tin dự án</h2>
+          <form action="/editp-DuAn" method="post">
+               <div class="form-group">
+                    <label for="TDA_input">Tên dự
+                         án:</label>
+                    <input type="text"
+                         class="form-control"
+                         name="TDA_input"
+                         value=" <%= post.tenDuAn %>"/>
+               </div>
+               <div class="form-group">
+                    <label for="NBD_input">Ngày
+                         bắt đầu dự án:</label>
+                    <input type="date"
+                         class="form-control"
+                         name="NBD_input"
+                       value="<%=date3%>" />
+               </div>
+
+               <div class="form-group">
+                    <label for="NKT_input">Ngày kết thúc dự án:</label>
+                    <input type="date"
+                         class="form-control"
+                         name="NKT_input"
+                         value="<%=date4 %>" />
+               </div>
+
+                    <div class="form-group">
+
+               <div class="form-group">
+                    <label for="NQL_input">Người
+                         quản lý:</label>
+                    <input type="text"
+                         class="form-control"
+                         name="NQL_input"
+                        value=" <%= post.nguoiQuanLy %>" />
+               </div>
+               <div class="form-group">
+                    <label for="MTDA_input">Mô tả
+                         dự án:</label>
+                    <input type="text" class="form-control"
+                         name="MTDA_input"
+                         value=" <%= post.moTaDuAn %>"></input>
+               </div>
+                <input name="id"  value="<%= post.id %> " type="text" hidden>
+               <button type="submit"
+                    class="btn btn-primary"
+                 id="T_button">Sửa</button>
+          </form>
+     </div>
+
+     </form>
+     </div>
+     <script
+          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+     <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+     <script
+          src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

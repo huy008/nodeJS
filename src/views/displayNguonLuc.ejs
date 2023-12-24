@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <title>Danh sách các nguồn lực<</title>
+  </head>
+
+  <body>
+    <%- include('menu.ejs') %>
+
+    <div class="m-4">
+      <h1 class="m-3">Danh sách các nguồn lực</h1>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Tên nguồn lực</th>
+          <th scope="col">Loại nguồn lực</th>
+          <th scope="col">Mô tả nguồn lực</th>
+          <th scope="col">Khả năng nguồn lực</th>
+          <th scope="col">Chi phí</th>
+          <th scope="col">Thời gian sử dung</th>
+          <th scope="col">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% nguonlucs.forEach((nguonluc)=> { %>
+        <tr>
+          <td><%= nguonluc.tenNguonLuc %></td>
+          <td><%= nguonluc.loaiNguonLuc %></td>
+          <td><%= nguonluc.moTaNguonLuc %></td> 
+          <td><%= nguonluc.khaNangNguonLuc %>"</td>
+          <td><%= nguonluc.chiPhi %></td>
+          <td><%= nguonluc.thoiGianSuDung %></td>
+          <td>
+             <div class="btn-group">
+            <a
+              href="/editg-NguonLuc?id=<%= nguonluc.id %>"
+              type="button"
+              class="btn btn-warning mr-2"
+              >Sửa</a
+            >
+            <a
+              href="/delete-NguonLuc?id=<%= nguonluc.id %>"
+              type="button"
+              class="btn btn-danger"
+              >Xóa</a
+            >
+          </td>
+          </div>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    </div>
+ <div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<%- include('pagination.ejs',{title : title,soTrang:soTrang,page:page}) %>
+</div>
+</div>
+</div>
+  </body>
+</html>

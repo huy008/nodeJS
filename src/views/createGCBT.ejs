@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <title>Nhập thông tin ghi chú và bảo trì</title>
+  </head>
+  <body>
+    <%- include('menu.ejs') %>
+    <!-- Công việc -->
+    <div class="container mt-5">
+      <h2>Tạo ghi chú và bảo trì</h2>
+      <form action="/createp-GCBT" method="post">
+        <div class="form-group">
+          <label for="NVBD_input">Nhiệm vụ bảo dưỡng:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="NVBD_input"
+            placeholder="Nhập nhiệm vụ bảo dưỡng" />
+        </div>
+        <div class="form-group">
+          <label for="QS_input">Quan sát:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="QS_input"
+            placeholder="Nhập quan sát" />
+        </div>
+        <div class="form-group">
+          <label for="HD_input">Hành động:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="HD_input"
+            placeholder="Nhập hành động" />
+        </div>
+        <div class="form-group">
+          <label for="TTHT_input">Trạng thái hoàn thành:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="TTHT_input"
+            placeholder="Nhập trạng thái hoàn thành" />
+        </div>
+        <div class="form-group">
+          <label for="TG_input">Thời gian:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="TG_input"
+            placeholder="Nhập thời gianc" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Thêm</button>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

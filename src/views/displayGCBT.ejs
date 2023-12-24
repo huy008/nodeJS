@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <title>Danh sách ghi chú và bảo trì </title>
+  </head>
+
+  <body>
+    <%- include('menu.ejs') %>
+
+   <div class="m-4">
+     <h1 class="m-3">Danh sách ghi chú và bảo trì</h1>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nhiệm vụ bảo dưỡng</th>
+          <th scope="col">Quan sát công việc</th>
+          <th scope="col">Thực hiện</th>
+          <th scope="col">Trạng thái hoàn thành</th>
+          <th scope="col">Thời gian</th>
+          <th scope="col">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% gcbts.forEach((gcbt)=> { %>
+        <tr>
+          <td><%= gcbt.nhiemVuBaoDuong %></td>
+          <td><%= gcbt.quanSat %></td>
+          <td><%= gcbt.hanhDong %></td> 
+          <td><%= gcbt.trangThaiHoanThanh %></td>
+          <td><%= gcbt.thoiGian %></td>
+          <td>
+             <div class="btn-group">
+            <a
+              href="/editg-GCBT?id=<%= gcbt.id %>"
+              type="button"
+              class="btn btn-warning mr-2"
+              >Sửa</a
+            >
+            <a
+              href="/delete-GCBT?id=<%= gcbt.id %>"
+              type="button"
+              class="btn btn-danger"
+              >Xóa</a
+            >
+          </td>
+          </div>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+   </div>
+ <div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<%- include('pagination.ejs',{title : title,soTrang:soTrang,page:page}) %>
+</div>
+</div>
+</div>
+  </body>
+</html>
